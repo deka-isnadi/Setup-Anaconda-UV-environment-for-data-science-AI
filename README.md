@@ -49,7 +49,7 @@ Steps:
 - Go to https://www.anaconda.com/products/distribution
 - Choose the version for your OS (Windows/macOS/Linux)
 - Click the Download button
-![image](download
+![image](downloadAnaconda.png)
 Do's:
 - Download from the official Anaconda website
 - Save the installer in an easily accessible folder  
