@@ -67,6 +67,7 @@ Steps:
 - Open the downloaded installer
 - Follow the installation wizard
 - Choose the “Add Anaconda to PATH” option (optional)
+![Image](installAnaconda.png)
 
 Do's:
 - Use default settings if unsure
@@ -85,7 +86,10 @@ Steps:
 1. Open terminal or command prompt
 2. Type the command: `conda --version`
 3. If the Conda version appears, the installation is successful.
-
+```
+(base) deka@MBAir ~ % conda --version
+conda 24.9.2
+```
 Do's:
 - Use a new terminal session after installation to ensure PATH is refreshed
 - Make sure the command runs without errors  
@@ -122,7 +126,77 @@ To avoid conflicts between different Python or package versions across projects.
 
 Steps:
 - Run the following in terminal: `conda create -n env_name python=3.9`
+```
+(base) deka@MBAir Library % conda create -n dekaisn_env python=3.9
+Channels:
+ - defaults
+Platform: osx-arm64
+Collecting package metadata (repodata.json): done
+Solving environment: done
 
+## Package Plan ##
+
+  environment location: /opt/anaconda3/envs/dekaisn_env
+
+  added / updated specs:
+    - python=3.9
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    ca-certificates-2025.2.25  |       hca03da5_0         131 KB
+    expat-2.7.1                |       h313beb8_0         156 KB
+    openssl-3.0.16             |       h02f6b3c_0         4.3 MB
+    pip-25.1                   |     pyhc872135_2         1.3 MB
+    python-3.9.23              |       h99c0cbc_0        12.5 MB
+    setuptools-78.1.1          |   py39hca03da5_0         1.7 MB
+    tk-8.6.14                  |       h6ba3021_1         3.3 MB
+    tzdata-2025b               |       h04d1e81_0         116 KB
+    wheel-0.45.1               |   py39hca03da5_0         115 KB
+    xz-5.6.4                   |       h80987f9_1         289 KB
+    ------------------------------------------------------------
+                                           Total:        23.8 MB
+
+The following NEW packages will be INSTALLED:
+
+  bzip2              pkgs/main/osx-arm64::bzip2-1.0.8-h80987f9_6 
+  ca-certificates    pkgs/main/osx-arm64::ca-certificates-2025.2.25-hca03da5_0 
+  expat              pkgs/main/osx-arm64::expat-2.7.1-h313beb8_0 
+  libcxx             pkgs/main/osx-arm64::libcxx-14.0.6-h848a8c0_0 
+  libffi             pkgs/main/osx-arm64::libffi-3.4.4-hca03da5_1 
+  ncurses            pkgs/main/osx-arm64::ncurses-6.4-h313beb8_0 
+  openssl            pkgs/main/osx-arm64::openssl-3.0.16-h02f6b3c_0 
+  pip                pkgs/main/noarch::pip-25.1-pyhc872135_2 
+  python             pkgs/main/osx-arm64::python-3.9.23-h99c0cbc_0 
+  readline           pkgs/main/osx-arm64::readline-8.2-h1a28f6b_0 
+  setuptools         pkgs/main/osx-arm64::setuptools-78.1.1-py39hca03da5_0 
+  sqlite             pkgs/main/osx-arm64::sqlite-3.45.3-h80987f9_0 
+  tk                 pkgs/main/osx-arm64::tk-8.6.14-h6ba3021_1 
+  tzdata             pkgs/main/noarch::tzdata-2025b-h04d1e81_0 
+  wheel              pkgs/main/osx-arm64::wheel-0.45.1-py39hca03da5_0 
+  xz                 pkgs/main/osx-arm64::xz-5.6.4-h80987f9_1 
+  zlib               pkgs/main/osx-arm64::zlib-1.2.13-h18a0788_1 
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages:
+                                                                                                                                               
+Preparing transaction: done                                                                                                                    
+Verifying transaction: done                                                                                                                    
+Executing transaction: done                                                                                                                    
+#                                                                                                                                              
+# To activate this environment, use                                                                                                            
+#                                                                                                                                              
+#     $ conda activate dekaisn_env                                                                                                             
+#                                                                                                                                              
+# To deactivate an active environment, use                                                                                                     
+#
+#     $ conda deactivate
+```
 Do's:
 - Use descriptive and easy-to-remember names for environments  
 - Avoid unnecessary environment creation  
@@ -143,7 +217,16 @@ Steps:
 1. Make sure Conda is deactivated (`conda deactivate`)
 2. Type: `pip install uv`
 3. A successful output like `Successfully installed uv-0.7.12` indicates success
-4. The `ghost_intellixuv` folder will be created during `uv init`. You do not need to create it manually.
+4. The `ghost_intellixuv` folder will be created during `uv init`. You do not need to create it manually
+```
+(base) deka@MBAir Library % pip install uv
+Collecting uv
+  Downloading uv-0.7.13-py3-none-macosx_11_0_arm64.whl.metadata (11 kB)
+Downloading uv-0.7.13-py3-none-macosx_11_0_arm64.whl (15.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.8/15.8 MB 9.5 MB/s eta 0:00:00
+Installing collected packages: uv
+Successfully installed uv-0.7.13
+```
 
 Do's:
 - Use descriptive environment names
@@ -163,8 +246,15 @@ Steps:
 2. Run:  
    `uv init ghost_intellixuv`  
    `cd ghost_intellixuv`  
-3. Output will indicate initialization at `C:\Users\USERNAME\ghost_intellix\ghost_intellixuv`
-
+3. Output will indicate initialization at `/Users/deka/ghost_intellixuv`
+```
+(base) deka@MBAir ~ % uv init ghost_intellixuv 
+Initialized project `ghost-intellixuv` at `/Users/deka/ghost_intellixuv`
+```
+```
+(base) deka@MBAir ~ % cd ghost_intellixuv 
+(base) deka@MBAir ghost_intellixuv %
+```
 Do's:
 - Use consistent folder structure  
 - Document dependencies in `requirements.txt`  
@@ -184,6 +274,20 @@ To access the functions needed during development.
 
 Steps:
 - Type: `uv add pandas`
+```
+(base) deka@MBAir ghost_intellixuv % uv add pandas
+Using CPython 3.12.7 interpreter at: /opt/anaconda3/bin/python3.12
+Creating virtual environment at: .venv
+Resolved 7 packages in 610ms
+Prepared 6 packages in 1.82s
+Installed 6 packages in 50ms
+ + numpy==2.3.0
+ + pandas==2.3.0
+ + python-dateutil==2.9.0.post0
+ + pytz==2025.2
+ + six==1.17.0
+ + tzdata==2025.2
+```
 
 Do's:
 - Only install needed packages  
@@ -232,7 +336,7 @@ Common and recommended packages for data science and machine learning:
 - jupyter  
 - seaborn  
 - tensorflow or pytorch (as needed)
-
+![image](https://private-user-images.githubusercontent.com/211091720/453819074-d4e68cf5-e066-44b5-bfb6-f070e9b755f1.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDk4NDAyNjUsIm5iZiI6MTc0OTgzOTk2NSwicGF0aCI6Ii8yMTEwOTE3MjAvNDUzODE5MDc0LWQ0ZTY4Y2Y1LWUwNjYtNDRiNS1iZmI2LWYwNzBlOWI3NTVmMS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNjEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDYxM1QxODM5MjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0wMmFlYTFiODM1OGVhZGExOTk3OWVlOWQzOTkxMjdlNjA4N2M0OTY2NDUxMjBmZjk0ODRiNTYzY2I5MTMyNWRkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.SdcpLGH8PID1wf7yWeeSWb1g_7xD8UyjA4ee7CUcIrQ)
 Do's:
 - Install based on actual project needs  
 - Regularly update packages  
@@ -276,7 +380,7 @@ Don'ts:
 
 Important Commands  
 Below are some key commands for managing environments:
-
+![image](https://private-user-images.githubusercontent.com/211091720/453810486-5eec8061-abef-4564-b5eb-31bb6c6bcad6.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDk4NDAyNjUsIm5iZiI6MTc0OTgzOTk2NSwicGF0aCI6Ii8yMTEwOTE3MjAvNDUzODEwNDg2LTVlZWM4MDYxLWFiZWYtNDU2NC1iNWViLTMxYmI2YzZiY2FkNi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNjEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDYxM1QxODM5MjVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02NzYwZmJmMTRjZTg2MWY4NDU0ZTU1ZjViM2I1NzkyYzY2NjYyNWRhNDMwNzNjODk2MmQwMDU0YjZhMDA0NzIyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.gmR0yFWu48yIBJeddoZSHF_B5l7yGT1KxOIsDG2earY)
 - `conda create -n myenv python=3.9` — Create a new Conda environment
 - `conda activate myenv` — Activate the Conda environment
 - `conda deactivate` — Deactivate the current environment
